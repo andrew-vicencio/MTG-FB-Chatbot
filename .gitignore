@@ -1,0 +1,9 @@
+/bot/bin
+/bot/lib
+/bot/pip-selfcheck.json
+/bot/share
+/bot/conf.json
+/bot/lib64
+/bot/pyvenv.cfg
+/bot/include
+.idea

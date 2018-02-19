@@ -24,7 +24,7 @@ def parse_message(self, mid=None, author_id=None, message=None, message_object=N
             for i in range(len(cards)):
                 cardlist += cards[i].name + "\n"
 
-            whichone = "There are " + str(len(cards)) + " cards with that name. +" \
+            whichone = "There are " + str(len(cards)) + " cards with that name. " + \
                                                         "Please a specific one from the following:\n" + cardlist
             client.send(Message(text=whichone), thread_id=thread_id, thread_type=thread_type)
         else:
@@ -36,7 +36,8 @@ def parse_message(self, mid=None, author_id=None, message=None, message_object=N
 
 def sendcard(card, thread_id, thread_type):
     info = "Name: " + card.name + "\n"
-    info += "Mana Cost: " + card.mana_cost + "\n"
+    if(card.mana_cost != None):
+        info += "Mana Cost: " + card.mana_cost + "\n"
     info += "Type: "
     if(card.supertypes != None):
         info += "".join(list(card.supertypes)) + " "
@@ -45,7 +46,7 @@ def sendcard(card, thread_id, thread_type):
         info += " - " + "".join(list(card.subtypes))
     info += "\n"
     info += "Rarity: " + card.rarity + "\n"
-    info += "Text:\n" + card.text + "\n"
+    info += "Text: " + card.text + "\n"
     if(card.power != None and card.toughness != None):
         info += "Power/Toughness: " + str(card.power) + " / " + str(card.toughness) + "\n"
     if(card.loyalty != None):

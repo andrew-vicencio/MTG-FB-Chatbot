@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
     client = MTG(config["facebook"]["email"], config["facebook"]["password"])
 
-    fetch = re.compile("{{([\w\s]*.*)}}")
+    fetch = re.compile("{{([\w\s.]*)(?:\/\/)?([\w\s.]*)?}}")
     begone = re.compile("(BEGONE JACE)")
     requests = Queue()
 

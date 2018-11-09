@@ -7,3 +7,5 @@
 /bot/pyvenv.cfg
 /bot/include
 .idea
+bot/.Python
+.DS_STORE
